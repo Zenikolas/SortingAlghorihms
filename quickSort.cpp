@@ -60,7 +60,6 @@ template<class T, size_t N>
 void sortNotReqursive(T (&arr)[N], size_t left, size_t right) {
     traceRecursionDepth();
 
-
     while (left < right) {
         size_t idx = partition(arr, left, right);
         size_t left_distance = idx - left;
