@@ -3,6 +3,7 @@
 
 #include <algorithm>
 
+#include "Util.h"
 
 void merge(int* arr, size_t mid, size_t size) { // 1 1 3 mid 1 size 3 // 2 5 7 3
     int input[size];// 1 1 3 // 2 5 3 7
@@ -50,22 +51,6 @@ void mergeSort(int* arr, size_t size) { // 7 // 3 // 4
     mergeSort(arr, mid);
     mergeSort(arr + mid, size - mid); // 3,1 -> 1,3 //
     merge(arr, mid, size);
-}
-
-template<class T, size_t N>
-void print(T (& arr)[N]) {
-    std::cout << '[';
-    if (N != 0) {
-        std::cout << arr[0];
-    }
-
-    if (N > 1) {
-        for (size_t i = 1; i < N; ++i) {
-            std::cout << ", " << arr[i];
-        }
-    }
-
-    std::cout << ']' << std::endl;
 }
 
 template<class T>
